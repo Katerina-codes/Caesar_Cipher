@@ -12,10 +12,10 @@ describe CaesarCipher do
   expect(encryptor.convert("a", 1)).to eq("b")
   end
 
-  # it "should test that (a, 2) returns (c)" do
-  # encryptor = CaesarCipher.new
-  # expect(encryptor.convert("a", 2 )).to eq("c")
-  # end
+  it "should test that (a, 2) returns (c)" do
+  encryptor = CaesarCipher.new
+  expect(encryptor.convert("a", 2 )).to eq("c")
+  end
   #
   # it "should test that (a, 3) returns (d)" do
   # encryptor = CaesarCipher.new
