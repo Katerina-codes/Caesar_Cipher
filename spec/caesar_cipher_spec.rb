@@ -22,11 +22,11 @@ describe CaesarCipher do
   expect(encryptor.convert("a", 3)).to eq("d")
   end
 
-  # it "should test that (ab, 0) returns (ab)" do
-  # encryptor = CaesarCipher.new
-  # expect(encryptor.convert("ab", 0)).to eq("ab")
-  # end
-  #
+  it "should test that when 'ab' is increased by 0, 'ab' is returned" do
+  encryptor = CaesarCipher.new
+  expect(encryptor.convert("ab", 0)).to eq("ab")
+  end
+
   # it "should test that (ab, 1) returns (bc)" do
   # encryptor = CaesarCipher.new
   # expect(encryptor.convert("ab", 0)).to eq("ab")
