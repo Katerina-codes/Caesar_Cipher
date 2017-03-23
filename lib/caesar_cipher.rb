@@ -43,6 +43,10 @@ class CaesarCipher
             updated_converted_number = converted_number.to_i + number.to_i  #  (3 + 2)
           end
 
+            if updated_converted_number.to_i >= 27
+               updated_converted_number = updated_converted_number - 26
+            end
+
           number_to_letter = {1 => "a",
             2 => "b",
             3 => "c",
