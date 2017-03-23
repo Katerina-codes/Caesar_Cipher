@@ -1,13 +1,13 @@
 class CaesarCipher
 
-  def convert(string, number)
+  def convert(string, number)          # ("cat dog", 2)
     new_number = []
-    letters = string.split("").to_a
+    letters = string.split("").to_a     # ["c", "a", "t", " ", "d", "o", "g"]
 
     if number == 0
       new_number.push(string)
     else
-      letters.each do |letter|
+      letters.each do |letter|          #
 
         letter_to_number = {"a" => 1,
           "b" => 2,
@@ -36,8 +36,12 @@ class CaesarCipher
           "y" => 25,
           "z" => 26}
 
-          converted_number = letter_to_number[letter]
-          updated_converted_number = converted_number.to_i + number.to_i
+          if letter == " "
+            new_number.push(letter)
+          else
+            converted_number = letter_to_number[letter]                     # (c = 3)
+            updated_converted_number = converted_number.to_i + number.to_i  #  (3 + 2)
+          end
 
           number_to_letter = {1 => "a",
             2 => "b",
@@ -66,8 +70,8 @@ class CaesarCipher
             25 => "y",
             26 => "z"}
 
-            encrypted_letter = number_to_letter[updated_converted_number]
-            new_number.push(encrypted_letter)
+            encrypted_letter = number_to_letter[updated_converted_number]  #(5 = "e")
+            new_number.push(encrypted_letter)                              # ["e"]
           end
         end
         new_number.join
