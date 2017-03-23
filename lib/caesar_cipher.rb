@@ -1,13 +1,23 @@
 class CaesarCipher
 
-  def convert(string, number)          # ("I love cake", 1)
+  def get_string
+    puts "Please enter a string"
+    string = gets.chomp
+  end
+
+  def get_shift_number
+    puts "Please enter a number between 1 and 26"
+    number = gets.chomp.to_i
+  end
+
+  def convert(string, number)
     new_number = []
-    letters = string.downcase.split("").to_a     #  "I", " ", "l", "o"
+    letters = string.downcase.split("").to_a
 
     if number == 0
       new_number.push(string)
     else
-      letters.each do |letter|          #
+      letters.each do |letter|
 
         letter_to_number = {"a" => 1,
           "b" => 2,
@@ -36,7 +46,7 @@ class CaesarCipher
           "y" => 25,
           "z" => 26}
 
-          if letter == " "
+          if letter == " " || letter == "!"
             new_number.push(letter)
           else
             converted_number = letter_to_number[letter]                     # (c = 3)
@@ -74,8 +84,8 @@ class CaesarCipher
             25 => "y",
             26 => "z"}
 
-            encrypted_letter = number_to_letter[updated_converted_number]  #(5 = "e")
-            new_number.push(encrypted_letter)                              # ["e"]
+            encrypted_letter = number_to_letter[updated_converted_number]
+            new_number.push(encrypted_letter)
           end
         end
         new_number.join

@@ -1,4 +1,6 @@
 require_relative "lib/caesar_cipher"
 
 encrypted_string = CaesarCipher.new
-puts encrypted_string.convert("What a string!", 5)
+string = encrypted_string.get_string
+number = encrypted_string.get_shift_number
+puts encrypted_string.convert(string, number)
