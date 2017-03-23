@@ -49,13 +49,13 @@ class CaesarCipher
           if letter == " " || letter == "!"
             new_number.push(letter)
           else
-            converted_number = letter_to_number[letter]                     # (c = 3)
-            updated_converted_number = converted_number.to_i + number.to_i  #  (3 + 2)
+            converted_number = letter_to_number[letter]
+            updated_converted_number = converted_number.to_i + number.to_i 
           end
 
-            if updated_converted_number.to_i >= 27
-               updated_converted_number = updated_converted_number - 26
-            end
+          if updated_converted_number.to_i >= 27
+            updated_converted_number = updated_converted_number - 26
+          end
 
           number_to_letter = {1 => "a",
             2 => "b",
