@@ -1,8 +1,8 @@
 class CaesarCipher
 
-  def convert(string, number)          # ("cat dog", 2)
+  def convert(string, number)          # ("I love cake", 1)
     new_number = []
-    letters = string.split("").to_a     # ["c", "a", "t", " ", "d", "o", "g"]
+    letters = string.downcase.split("").to_a     #  "I", " ", "l", "o"
 
     if number == 0
       new_number.push(string)

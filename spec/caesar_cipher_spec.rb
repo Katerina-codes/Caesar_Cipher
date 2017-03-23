@@ -36,7 +36,7 @@ describe CaesarCipher do
     encryptor = CaesarCipher.new
     expect(encryptor.convert("cat", 5)).to eq("hfy")
   end
-
+     
   it "encrypts 2 words" do
     encryptor = CaesarCipher.new
     expect(encryptor.convert("cat dog", 2)).to eq("ecv fqi")

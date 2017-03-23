@@ -1,4 +1,4 @@
 require_relative "lib/caesar_cipher"
 
-encryptor = CaesarCipher.new
-puts encryptor.convert("katerina", 1)
+encrypted_string = CaesarCipher.new
+puts encrypted_string.convert("I love cake", 1)
