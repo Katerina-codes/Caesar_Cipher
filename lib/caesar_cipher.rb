@@ -15,21 +15,26 @@ class CaesarCipher
     # number = get_shift_number                           # 1
 
     new_number = []                                     # []
-    letters = string.downcase.split("")          #  "h", "i"
+    letters = string.split("")          #  "h", "i"
 
     if number == 0                                       #
       return new_number.push(string).join                            # "hi"
-    else
-      letters.each do |letter|
-        if letter == " " || letter == "!"
-          new_number.push(letter)
-        else                     # "h" -> "i"
-          updated_converted_number = letter_to_number(letter, number)  # 9
-          encrypted_letter = number_to_letter(updated_converted_number) # i
-          new_number.push(encrypted_letter)
-        end                # new_number.push("i")
-      end
     end
+
+          letters.each do |letter|
+          if letter == " " || letter == "!"
+            new_number.push(letter)
+          elsif letter == letter.downcase
+            updated_converted_number = letter_to_number(letter, number)  # 9
+            encrypted_letter = number_to_letter(updated_converted_number) # i
+            new_number.push(encrypted_letter)
+          else letter == letter.upcase
+            updated_converted_number = letter_to_number_upcase(letter, number)
+            encrypted_letter = number_to_upcase_letter(updated_converted_number)
+            new_number.push(encrypted_letter)
+          end                # new_number.push("i")
+        end
+
     new_number.join
   end
 
@@ -75,6 +80,47 @@ class CaesarCipher
       updated_converted_number
     end
 
+    def letter_to_number_upcase(letter, number)
+      letter_to_number = {"A" => 1,
+        "B" => 2,
+        "C" => 3,
+        "D" => 4,
+        "E" => 5,
+        "F" => 6,
+        "G" => 7,
+        "H" => 8,
+        "I" => 9,
+        "J" => 10,
+        "K" => 11,
+        "L" => 12,
+        "M" => 13,
+        "N" => 14,
+        "O" => 15,
+        "P" => 16,
+        "Q" => 17,
+        "R" => 18,
+        "S" => 19,
+        "T" => 20,
+        "U" => 21,
+        "V" => 22,
+        "W" => 23,
+        "X" => 24,
+        "Y" => 25,
+        "Z" => 26}
+        #
+        # if letter == " " || letter == "!"
+        #   new_number.push(letter)
+
+        converted_number = letter_to_number[letter]
+        updated_converted_number = converted_number.to_i + number.to_i # 8 + 1 = 9
+
+
+        if updated_converted_number.to_i >= 27
+          updated_converted_number = updated_converted_number - 26
+        end
+        updated_converted_number
+      end
+
     def number_to_letter(updated_converted_number)
       number_to_letter = {1 => "a",
         2 => "b",
@@ -107,7 +153,37 @@ class CaesarCipher
         # new_number.push(encrypted_letter)                             # new_number
       end
 
-      # new_number = CaesarCipher.new.convert   # new_number = convert - new_number = [h, i]
-      # new_number.join        #       "hi"
+
+      def number_to_upcase_letter(updated_converted_number)
+        number_to_letter = {1 => "A",
+          2 => "B",
+          3 => "C",
+          4 => "D",
+          5 => "E",
+          6 => "F",
+          7 => "G",
+          8 => "H",
+          9 => "I",
+          10 => "J",
+          11 => "K",
+          12 => "L",
+          13 => "M",
+          14 => "N",
+          15 => "O",
+          16 => "P",
+          17 => "Q",
+          18 => "R",
+          19 => "S",
+          20 => "T",
+          21 => "U",
+          22 => "V",
+          23 => "W",
+          24 => "X",
+          25 => "Y",
+          26 => "Z"}
+
+          encrypted_letter = number_to_letter[updated_converted_number] # "i"
+          # new_number.push(encrypted_letter)                             # new_number
+        end
 
     end
