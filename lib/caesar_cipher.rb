@@ -38,7 +38,7 @@ class CaesarCipher
 
 
   def letter_to_number(letter, number)
-    letter_to_number = {"a" => 1,
+    alpha_numeric_map = {"a" => 1,
       "b" => 2,
       "c" => 3,
       "d" => 4,
@@ -63,9 +63,10 @@ class CaesarCipher
       "w" => 23,
       "x" => 24,
       "y" => 25,
-      "z" => 26}
+      "z" => 26
+    }
 
-      converted_number = letter_to_number[letter]
+      converted_number = alpha_numeric_map[letter]
       updated_converted_number = converted_number.to_i + number.to_i
 
 
@@ -76,7 +77,7 @@ class CaesarCipher
     end
 
     def letter_to_number_upcase(letter, number)
-      letter_to_number = {"A" => 1,
+      upcase_alpha_numeric_map = {"A" => 1,
         "B" => 2,
         "C" => 3,
         "D" => 4,
@@ -101,9 +102,10 @@ class CaesarCipher
         "W" => 23,
         "X" => 24,
         "Y" => 25,
-        "Z" => 26}
+        "Z" => 26
+      }
 
-        converted_number = letter_to_number[letter]
+        converted_number = upcase_alpha_numeric_map[letter]
         updated_converted_number = converted_number.to_i + number.to_i
 
 
@@ -114,7 +116,7 @@ class CaesarCipher
       end
 
       def number_to_letter(updated_converted_number)
-        number_to_letter = {1 => "a",
+        numeric_alpha_map = {1 => "a",
           2 => "b",
           3 => "c",
           4 => "d",
@@ -139,14 +141,15 @@ class CaesarCipher
           23 => "w",
           24 => "x",
           25 => "y",
-          26 => "z"}
+          26 => "z"
+        }
 
-          encrypted_letter = number_to_letter[updated_converted_number]
+          encrypted_letter = numeric_alpha_map[updated_converted_number]
         end
 
 
         def number_to_upcase_letter(updated_converted_number)
-          number_to_letter = {1 => "A",
+          numeric_upcase_alpha_map = {1 => "A",
             2 => "B",
             3 => "C",
             4 => "D",
@@ -171,9 +174,10 @@ class CaesarCipher
             23 => "W",
             24 => "X",
             25 => "Y",
-            26 => "Z"}
+            26 => "Z"
+          }
 
-            encrypted_letter = number_to_letter[updated_converted_number]
+            encrypted_letter = numeric_upcase_alpha_map[updated_converted_number]
           end
 
         end
